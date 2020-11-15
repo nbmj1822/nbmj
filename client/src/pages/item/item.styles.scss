@@ -1,0 +1,94 @@
+.SpinnerOverlay{
+height: 60vh;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.SpinnerContainer{
+    display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(195, 195, 195, 0.6);
+  border-radius: 50%;
+  border-top-color: #636767;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  @keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+}
+.D{
+  padding: 10px;
+  margin: 10px;
+}
+.item-page{
+    padding:30px;
+    margin:40px;
+    padding-top:0;
+    margin-top:0;
+    @media screen and (max-width:800px){
+      padding:0;
+      margin:0;
+    }
+}
+.item{
+  display: flex;
+  // overflow-x: hidden;
+  @media screen and (max-width:800px){
+    flex-direction: column;
+  }
+}
+.carousel{
+  width: 500px;
+  height: 500px;
+  padding: 10px;
+  margin: 10px;
+  @media screen and (max-width:800px){
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+.cartPrice{
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  flex-direction: column;
+  .single{
+    font-size:37px;
+    text-transform: uppercase;
+    padding: 5px;
+  }
+  .singlep{
+    font-size:30px;
+    text-transform: uppercase;
+    padding: 5px;
+    color: #dd3333;
+    font-weight: 700;
+  }
+  .singleb{
+    font-size:20px;
+    text-transform: capitalize;
+    padding: 10px;
+    margin: 10px;
+  }
+}
+.breif{
+  .singleb{
+    font-size:15px;
+    text-transform: capitalize;
+    padding: 10px;
+    margin: 10px;
+    color: #dd3333;
+    font-weight: 800;
+  }
+}

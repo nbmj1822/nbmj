@@ -1,0 +1,68 @@
+Features
+--------
+
+Location Country Restriction (Canada Only)
+Manual Custom Locations
+AJAX Search
+Quick Search
+Radius Filter
+Price Filter
+Custom Fields Filter
+Image Only Filter
+Condition Filter
+Reveal Phone
+Dial Phone
+Share Ad
+Report Ad
+Ad Slider
+Sellers Listings
+Nested Custom Fields ( for example Laptop Make / Model dependency )
+Multiple Values Custom Field
+Single / Multiple Colors Custom Field
+Multicurrency
+Unlimited Categorization
+Visits Chart
+Ad Status
+Full Profile Management (Dashboard)
+Ajax Messaging
+Messaging Per Ad
+Buyer Reviews
+Seller Reviews
+Unread Comments Management From Dashboard
+Review Responses
+Favorite Ads/Wishlist
+Sticky Menu
+More/Less Expanding Categories
+Categories In Single List
+Categories In Multiple Levels
+Logged Out Smart Contact Form
+GDPR ready
+Account Deactivation
+Bad words fitler
+Image watermark
+Facebook Login
+Twitter Login
+Google Login
+Regular Login
+Email Verification
+Expire Advert Email Notification
+Manual / Auto Approval
+Approval Email Notification
+Submit Terms & Conditions
+Custom Email & Name Sender
+PayPal Payment Gateway
+Stripe Payment Gateway
+Tax Ready
+List / Grid / Card Style
+Contact Form
+Mail Subscription
+Sticky Menu
+Blogs Page
+Invoices
+Separate Email Logo
+Beautiful Email Notification Style
+Password Recovery
+Password Strength
+Password Length
+Social Links on Posts/Listings
+SMS / Call Phone Verification

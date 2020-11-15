@@ -1,0 +1,22 @@
+.cashOnDelivery{
+    width: 40%;
+    padding:20px;
+    @media screen and (max-width:800px){
+        width: 100%;
+    }
+}
+.cashOnDelivery3{
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width:800px){
+        flex-direction: column-reverse;
+    }
+}
+.func{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media screen and (max-width:800px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -1,0 +1,35 @@
+.background{
+  // background: url('../../assets/land.png');
+  background: transparent;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  box-shadow: none;
+}
+.m{
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+  @media screen and (max-width:800px){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+    align-items: center;
+  }
+}
+// .categories{
+//   // display:;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   font-weight: bold;
+//   font-family: "acumin-pro", sans-serif;
+
+//   font-size: 20px;
+//   @media screen and (max-width:800px){
+//     display: vloc;
+
+//   }
+// }

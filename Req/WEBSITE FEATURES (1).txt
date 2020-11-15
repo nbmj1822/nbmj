@@ -1,0 +1,19 @@
+Features.
+
+1. Social or Email Login with Verification
+2. Add listing, edit listing, mark as hold, mark as sold
+3. User dashboard after login - Profile editing, Favorite Ads, Purchading Ads, list of Ads, Overall information.
+
+5. User's homepage shows products based on his latest search keywords
+6. Advanced search option - Filter Ads by keyowrds, location, zip code, city with a map view
+7. Responsive on all mobile devices
+8. Custom fields/categories to post ads on different categories
+9. Free, Paid posting, plus, per post ad boosting options
+10. Analytics for paid Ad listings & Invoice for Paid Ads
+11. Top listings, featured products, etc. on home page
+12. Chat/email messaging - logged in users can chat with seller.  Unregistered users will be forced to register
+
+13. Reviews for sellers - buyer can leave a rating + review, and seller can reply to the review. All reviews will be public.
+
+14....more to be added
+
