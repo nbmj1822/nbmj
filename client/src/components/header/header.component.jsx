@@ -1,34 +1,25 @@
 import React from 'react';
-// import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-// import InputBase from '@material-ui/core/InputBase';
-// import LockOpenRoundedIcon from '@material-ui/icons/LockOpenRounded';
-// import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-// import MailIcon from '@material-ui/icons/Mail';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import {withRouter} from 'react-router-dom'
-// import { selectCardHidden } from "../../redux/cart/cart.actions";
 import {selectCartHidden} from '../../redux/cart/cart.selectors'
 import TemporaryDrawer from '../cart-dropdown/cart-dropdown.component'
-// import SearchLocationInput from '../locationcomplete/locationautocomplete.component'
 import {createStructuredSelector} from 'reselect'
 import { selectDirectorySections } from "../../redux/directory/directory.selectors";
 import './header.styles.scss'
-// import {selectCartHidden} from '../../redux/cart/cart.selectors'
 import {selectCartItemsCount} from '../../redux/cart/cart.selectors'
 import { Link } from "react-router-dom";
 import {selectCurrentUser} from '../../redux/user/user.selectors'
 import {connect} from 'react-redux';
-
 import './header.styles'
 import {signOutStart} from '../../redux/user/user.actions'
 import Logo from '../../assets/logo.png'

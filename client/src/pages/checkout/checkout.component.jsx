@@ -4,10 +4,8 @@ import CheckoutItem from "../../components/checkout-item/checkout-item.component
 import { createStructuredSelector } from "reselect";
 import { selectCartItems,selectCartTotal } from "../../redux/cart/cart.selectors";
 import './checkout.styles.scss';
-import CustomButton from '../../components/custom-button/custom-button.component'
 // import PayPalCheckout from "../../components/stripe-button/stripe-button.component";
-// import FormInput from '../../components/form-input/form-input.component'
-import {Link} from 'react-router-dom'
+import PayPalCheckout from '../../components/stripe-button/stripe-button.component';
 const CheckoutPage = ({cartItems,total}) => {
   let tota = Number.parseFloat(total).toPrecision(3);
   return(  
@@ -38,9 +36,9 @@ const CheckoutPage = ({cartItems,total}) => {
         }
         <div className="total">
             <span>TOTAL: ${tota}</span>
-           <Link to="/payment"><CustomButton inverted>Proceed to Payment</CustomButton></Link>
+           <PayPalCheckout price={tota} item={cartItems}/>
         </div>
-    </div>
+    </div> 
     </div>
     </>
 )}

@@ -1,7 +1,8 @@
-import React, { useState} from "react";
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
 import firebase from 'firebase/app';
+import React,{useEffect,useCallback,useState} from 'react'
+import {firestore} from '../../firebase/firebase.utils'
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import './addproduct.styles.scss'
@@ -14,9 +15,8 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import {addProduct} from '../../firebase/firebase.utils'
 import TextField from '@material-ui/core/TextField';
-import 'firebase/storage';
+import 'firebase/storage'; 
 const AddProduct = () => {
-    
     const [productData,setProductData] = useState({
         id: Math.floor(Math.random() * 1000000000),
         name: ``,
@@ -30,6 +30,26 @@ const AddProduct = () => {
         documentTo : '',
         rating: 5
     })
+    const [categories,setCategories] = useState([]);
+    const firebasea = useCallback(() =>{
+        firestore.collection("categories").doc("categories").get().then(function(doc) {
+            if (doc.exists) {
+                // console.log("Document data:", doc.data().sections);
+                console.log(doc.data());
+                setCategories(doc.data().sections)
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+        
+        
+    },[])
+    useEffect(() => {
+        firebasea();
+    },[firebasea]);
     const useStyless = makeStyles((theme) => ({
         root: {
           '& > *': {
@@ -52,9 +72,6 @@ const useStyles = makeStyles((theme) => ({
   const classes = useStyles();
   const classe = useStyless();
   const [progress, setProgress] = React.useState(0);
-    const documents = [
-        
-    ]
     const {name,description,price,imageUrl,breif,photos,documentTo,id} = productData
     const handleChange = event => {
         const {value,name} = event.target;
@@ -198,8 +215,8 @@ const useStyles = makeStyles((theme) => ({
                     Categories
                 </MenuItem>
                 {
-                    documents.map(document=>(
-                        <MenuItem key={document} value={document}>{document}</MenuItem>
+                    categories.map(document=>(
+                        <MenuItem key={document.title} value={document.title}>{document.title}</MenuItem>
                     ))
                 }
                 </Select>

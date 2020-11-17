@@ -14,11 +14,8 @@ import { selectCollectionsForPreview} from './redux/shop/shop.selectors'
 // import {addCollectionAndDocuments} from './firebase/firebase.utils'
 // import collections from './shop.data'
 import CashOnDelivery from './components/cashondelivery/cashondelivery.component'
-
 import Directory from './components/directory/directory.component'
 import Admin from './pages/admin/admin.component'
-// import AddProduct from './components/addproduct/addproduct.component';
-// import { HomePageContainer } from './pages/homepage/homepage.styles';
 const App = ({checkUserSession,currentUser})  => {
   
   useEffect(() => {

@@ -54,16 +54,16 @@ app.post('/adminemail',(req,res)=>{
       port: 465,
       secure: true, // use SSL
     auth: {
-           user: 'Your Email',
-           pass: 'Your App Password(Not email password)'
+           user: process.env.EMAIL,
+           pass: process.env.PASSWORD
        }
    });
   let c = cartItems.map(cartItem=>{
    return '<tr><td>'+cartItem.name + '</td><td>' + cartItem.quantity + '</td><td>' + cartItem.title + '</td><td>' + '</td></tr>'
   })
   let mailOptions = {
-    from: 'Your Email', // sender address
-    to: 'Your Email', // list of receivers
+    from: process.env.EMAIL, // sender address
+    to: process.env.EMAIL, // list of receivers
     subject: 'An Order has been Placed', // Subject line
     html: `
       <h1>You have recieved an order</h1>

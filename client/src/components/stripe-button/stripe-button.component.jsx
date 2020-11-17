@@ -20,7 +20,7 @@ export default class PayPalCheckout extends React.Component{
         amount={price}
         currency="USD"
         options={{
-          clientId: "YOUR_API_KEY"
+          clientId: process.env.PAYPAL
       }}
         onSuccess={(details, data) => {
            var address = details.payer.address.address_line_1.concat('  ',details.payer.address.admin_area_1,'  ',details.payer.address.admin_area_2,'  ',details.payer.address.country_code)
