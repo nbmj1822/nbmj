@@ -20,7 +20,7 @@ const CollectionOverview = ({ collections }) => {
 return(
     <>
     <StyledHero img={Hero}>
-        <Banner title="Your Heading" subtitle={`Your SubHeading`}/>
+        <Banner title="SHOP NOW" subtitle={`NBMJ`}/>
     </StyledHero>
     <div style={{
         padding: '10px',
