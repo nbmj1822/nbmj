@@ -183,7 +183,7 @@ function Header({itemCount,currentUser,location,signOutStart}) {
     >                  
       <MenuItem onClick={handleMenuClose} className="option"><Link to='/signin'>Sign in</Link></MenuItem>
       <MenuItem style={{color:"black"}}><Link style={{color:"black"}} to="/shop"> SHOP</Link></MenuItem>
-      <MenuItem style={{color:"black"}}><Link style={{color:"black"}} to="/#categories">Categories</Link></MenuItem>   
+      <MenuItem style={{color:"black"}}><Link style={{color:"black"}} to="/categories">Categories</Link></MenuItem>   
       {/* <Link to="/signin"><MenuItem onClick={handleMenuClose} className="option">
         <p>Sign in</p>
       </MenuItem></Link> */}
@@ -223,7 +223,7 @@ function Header({itemCount,currentUser,location,signOutStart}) {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}> 
                 <MenuItem style={{color:"white"}}><Link style={{color:"white"}} to="/shop"><Button style={{color:"white",borderColor:"white",fontSize:"15px"}} variant="outlined" color="secondary"> SHOP </Button></Link></MenuItem>
-                <MenuItem style={{color:"white"}}><Link style={{color:"white"}} to="/#categories"><Button style={{color:"white",borderColor:"white",fontSize:"15px"}} variant="outlined" color="secondary"> Categories </Button></Link></MenuItem>
+                <MenuItem style={{color:"white"}}><Link style={{color:"white"}} to="/categories"><Button style={{color:"white",borderColor:"white",fontSize:"15px"}} variant="outlined" color="secondary"> Categories </Button></Link></MenuItem>
             {/*  */}
             <TemporaryDrawer color={"white"}/>
             <IconButton

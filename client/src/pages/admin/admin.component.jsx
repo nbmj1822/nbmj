@@ -1,5 +1,5 @@
 import React from 'react'
-// import AddProduct from '../../components/addproduct/addproduct.component'
+import AddProduct from '../../components/addproduct/addproduct.component'
 import View from '../../components/vieworders/vieworders.component'
 const Admin = ({email})  => {
 console.log(email);
@@ -15,7 +15,7 @@ console.log(email);
     {    email.email==='shujaali1234@gmail.com'?
         <>
         <View/>
-        {/* <AddProduct/> */}
+        <AddProduct/>
         </>
         : <div>404 Page Not Found</div>
     }

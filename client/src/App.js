@@ -21,7 +21,7 @@ import Term from './pages/term/term.component'
 import Premium from './pages/premium.component'
 import Contact from './pages/contactus.component'
 import Safety from './pages/stayingsafe.component'
-
+import Directory from './components/directory/directory.component'
 import Admin from './pages/admin/admin.component'
 import AddProduct from './components/addproduct/addproduct.component';
 // import { HomePageContainer } from './pages/homepage/homepage.styles';
@@ -74,7 +74,7 @@ const App = ({checkUserSession,currentUser})  => {
           {/* <Route exact path='/' render={()=>(<Redirect to='/shop'/>)}/> */}
           <Route exact path='/' component={HomePage}/>
           <Route path='/shop' component={ShopPage}/>
-          {/* <Route exact path='/refund' component={Refund}/> */}
+          <Route exact path='/categories' component={Directory}/>
           <Route exact path='/about' component={About}/>
           <Route exact path='/prohibited' component={Term}/>
           <Route exact path='/ethicaluse' component={Privacy}/>

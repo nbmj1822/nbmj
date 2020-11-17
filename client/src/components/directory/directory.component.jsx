@@ -1,16 +1,34 @@
-import React from 'react'
+import React,{useEffect,useCallback,useState} from 'react'
 import './directory.styles.scss'
+import {firestore} from '../../firebase/firebase.utils'
 import { createStructuredSelector } from "reselect"; 
 import { selectDirectorySections } from "../../redux/directory/directory.selectors";
 import MenuItem from '../menu-item/menu-item.component'
 import {connect} from 'react-redux'
-import SECTIONS_DATA from './sections.data'
 const Directory = () => {
-    // console.log(sections[0]);    
+    const [categories,setCategories] = useState([]);
+    const firebaseApp = useCallback(() =>{
+        firestore.collection("categories").doc("categories").get().then(function(doc) {
+            if (doc.exists) {
+                // console.log("Document data:", doc.data().sections);
+                setCategories(doc.data().sections)
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+        
+        
+    },[])
+    useEffect(() => {
+    firebaseApp();
+    },[firebaseApp]); 
     return(
             <div className="directory-menu">
                 {
-                    SECTIONS_DATA.map(({id, ...otherSectionProps}) =>(
+                    categories.map(({id, ...otherSectionProps}) =>(
                         <MenuItem key={id} {...otherSectionProps}/>
                     ))
                 }

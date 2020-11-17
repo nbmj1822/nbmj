@@ -13,7 +13,7 @@ import Hero from '../../assets/73931.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import SocialMediaButtons from './share.component'
-import ScrollableTabsButtonForce from '../../components/collection-item/tabs.component'
+// import ScrollableTabsButtonForce from '../../components/collection-item/tabs.component'
 class Item extends Component {
     state = {
         item: {
@@ -73,10 +73,10 @@ class Item extends Component {
         )
     }
     else{
-        const {name,rating,price,description,photos,breif,imageUrl} = this.state.item
+        const {name,rating,price,photos,breif} = this.state.item
         const {addItem} = this.props;
         return (
-            <>
+            <div style={{overflowX:"none"}}>
             <StyledHero img={Hero}>
                     <Banner title={name} subtitle={`$${price}`}/>
                 </StyledHero>
@@ -112,8 +112,8 @@ class Item extends Component {
                 </div>
                 </div> 
                 </div>  
-                <ScrollableTabsButtonForce description={description} rating={rating} img={imageUrl}/>
-                </>  
+                {/* <ScrollableTabsButtonForce description={description} rating={rating} img={imageUrl}/> */}
+                </div>  
         )
     }
     }

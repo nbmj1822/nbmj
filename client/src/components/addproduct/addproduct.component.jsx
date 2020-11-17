@@ -4,7 +4,6 @@ import CustomButton from '../custom-button/custom-button.component'
 import firebase from 'firebase/app';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
-// import InputLabel from '@material-ui/core/InputLabel';
 import './addproduct.styles.scss'
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,8 +14,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import {addProduct} from '../../firebase/firebase.utils'
 import TextField from '@material-ui/core/TextField';
-import {auth} from '../../firebase/firebase.utils'
-// import SearchLocationInput from '../locationcomplete/locationautocomplete.component'
 import 'firebase/storage';
 const AddProduct = () => {
     
@@ -28,19 +25,10 @@ const AddProduct = () => {
         price: '',
         description:'',
         slug: '',
-        searchTags: [],
-        condition:'',
         photos:[],
-        advertised:false,
-        soldBy: '',
-        email:  '',
-        phone:'',
-        location:'',
-        date : new Date(),
-        sold:false,
+        breif: '',
         documentTo : '',
-        preciseLocation:'',
-        search: ''
+        rating: 5
     })
     const useStyless = makeStyles((theme) => ({
         root: {
@@ -67,18 +55,10 @@ const useStyles = makeStyles((theme) => ({
     const documents = [
         
     ]
-    const {name,description,price,imageUrl,search,photos,documentTo,id,searchTags,condition,phone,location,preciseLocation} = productData
+    const {name,description,price,imageUrl,breif,photos,documentTo,id} = productData
     const handleChange = event => {
         const {value,name} = event.target;
         setProductData({...productData,[name]: value})
-    }
-    const onAdd = ()=> {
-        if(searchTags.length<=10){
-            let arr = searchTags
-            searchTags.push(search)
-            console.log(productData);
-        setProductData({...productData,searchTags: arr})
-        }
     }
     const [loading,setLoading] = React.useState(false);
     const handleImage = event => {
@@ -142,28 +122,19 @@ const useStyles = makeStyles((theme) => ({
             price: price,
             description:description,
             slug: `shop/${documentTo}/${encodeURI(name).toLowerCase()}`,
-            searchTags: searchTags,
-            condition:condition,
+            breif : breif,
             photos:photos,
-            advertised:false,
-            soldBy:auth.currentUser.displayName,
-            email:auth.currentUser.email,
-            phone:phone,
-            location:location,
-            preciseLocation: preciseLocation,
-            sold:false
         }
         addProduct(product,documentTo)
         setProductData({
             id: Math.floor(Math.random() * 1000000000),
             name: '',
-            quantity: '',
-            unit: '',
-            description : '',
-            price: 0,
             imageUrl: '',
-            file: '',
-            documentTo : ''
+            price: '',
+            description:'',
+            slug: ``,
+            breif : '',
+            photos:[],
         })
     }
     const selectPrimary = (prim) => {
@@ -194,14 +165,12 @@ const useStyles = makeStyles((theme) => ({
                     />
                     <FormInput 
                     type="text" 
-                    name="location" 
-                    value={location} 
+                    name="breif" 
+                    value={breif} 
+                    required 
                     handleChange={handleChange}
-                    label="Address"
-                    // disabled
-                    required
-                    >
-                    </FormInput>
+                    label='Breif Description'
+                    />
                     <TextField
                     id="outlined-multiline-static"
                     label="Description"
@@ -215,28 +184,6 @@ const useStyles = makeStyles((theme) => ({
                     style={{marginBottom:'10px',width:"100%"}}
                     />
                     <br/><br/>
-                    <div>
-                    <FormInput 
-                    type="text" 
-                    name="search" 
-                    value={search} 
-                    required
-                    handleChange={handleChange}
-                    label='Search Tags'
-                    >
-                    </FormInput>
-                    
-                    {
-                        searchTags.map(s => {
-                            console.log(s);
-                            console.log(searchTags);
-                            return(
-                            <ul style={{display:"inline"}}>
-                            <li style={{display:"inline-block",background:"#144dde",border:"1px solid #144dde",color:"white",borderRadius:"20px",padding:"10px",margin:"10px"}}>{s}</li>
-                            </ul>
-                        )})
-                        }<button style={{background:"#144dde",border:"1px solid #144dde",color:"white",borderRadius:"20px",padding:"10px",margin:"10px"}} type="button" onClick={onAdd}>Add</button>
-                    </div>
                 <FormControl className={classes.formControl}>
                 <Select
                 value={documentTo}
@@ -257,30 +204,7 @@ const useStyles = makeStyles((theme) => ({
                 }
                 </Select>
                 </FormControl>
-                <br/><br/>
-                <FormControl className={classes.formControl}>
-                <Select
-                value={condition}
-                onChange={handleChange}
-                displayEmpty
-                name="condition"
-                required
-                className={classes.selectEmpty}
-                inputProps={{ 'aria-label': 'Without label' }}
-                >
-                <MenuItem value="" disabled>
-                    Condition 1 for Old 5 for New
-                </MenuItem>
-                     <MenuItem value={1}>1</MenuItem>
-                     <MenuItem value={2}>2</MenuItem>
-                     <MenuItem value={3}>3</MenuItem>
-                     <MenuItem value={4}>4</MenuItem>
-                     <MenuItem value={5}>5</MenuItem>
-                </Select>
-                </FormControl>
-                </div>
-                
-                
+                <br/><br/> 
                 <div className="image-info">
                     <h2>Images</h2>
     <div className={classe.root}>
@@ -317,6 +241,7 @@ const useStyles = makeStyles((theme) => ({
                 </div>
             ))
         }
+    </div>
     </div>
     </div>
         <CustomButton className="submit" type="submit">Submit</CustomButton>
