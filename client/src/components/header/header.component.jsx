@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
+// import InputBase from '@material-ui/core/InputBase';
 // import LockOpenRoundedIcon from '@material-ui/icons/LockOpenRounded';
 // import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -127,22 +127,6 @@ function Header({itemCount,currentUser,location,signOutStart}) {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-  const [anchorE, setAnchorE] = React.useState(null);
-  const [anchor, setAnchor] = React.useState(null);
-  const handleClick = (event) => {
-    setAnchorE(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorE(null);
-  };
-  const handleClicks = (event) => {
-    setAnchor(event.currentTarget);
-  };
-
-  const handleClosee = () => {
-    setAnchor(null);
-  };
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -203,25 +187,12 @@ function Header({itemCount,currentUser,location,signOutStart}) {
             <Link to="/"><img src={Logo} className="logo" alt="Dhaka Foodies Hub"/></Link>
           </Typography>
           {/* <div style={{display:"flex"}}> */}
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon style={{color:"black"}}/>
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-            
-          </div>
           {/* <SearchLocationInput className={`${classes.inputRoot} ${classes.inputInput}`}/> */}
           </div>
           {/* </div> */}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}> 
+             <MenuItem style={{color:"white"}}><Link to="/shop"><SearchIcon style={{color:"white"}}/></Link></MenuItem>
                 <MenuItem style={{color:"white"}}><Link style={{color:"white"}} to="/shop"><Button style={{color:"white",borderColor:"white",fontSize:"15px"}} variant="outlined" color="secondary"> SHOP </Button></Link></MenuItem>
                 <MenuItem style={{color:"white"}}><Link style={{color:"white"}} to="/categories"><Button style={{color:"white",borderColor:"white",fontSize:"15px"}} variant="outlined" color="secondary"> Categories </Button></Link></MenuItem>
             {/*  */}

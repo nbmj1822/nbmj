@@ -7,7 +7,7 @@ import './checkout.styles.scss';
 import CustomButton from '../../components/custom-button/custom-button.component'
 // import PayPalCheckout from "../../components/stripe-button/stripe-button.component";
 // import FormInput from '../../components/form-input/form-input.component'
-import {Route,Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 const CheckoutPage = ({cartItems,total}) => {
   let tota = Number.parseFloat(total).toPrecision(3);
   return(  

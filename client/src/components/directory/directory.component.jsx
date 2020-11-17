@@ -7,10 +7,11 @@ import MenuItem from '../menu-item/menu-item.component'
 import {connect} from 'react-redux'
 const Directory = () => {
     const [categories,setCategories] = useState([]);
-    const firebaseApp = useCallback(() =>{
+    const firebasea = useCallback(() =>{
         firestore.collection("categories").doc("categories").get().then(function(doc) {
             if (doc.exists) {
                 // console.log("Document data:", doc.data().sections);
+                console.log(doc.data());
                 setCategories(doc.data().sections)
             } else {
                 // doc.data() will be undefined in this case
@@ -23,10 +24,10 @@ const Directory = () => {
         
     },[])
     useEffect(() => {
-    firebaseApp();
-    },[firebaseApp]); 
+        firebasea();
+    },[firebasea]); 
     return(
-            <div className="directory-menu">
+            <div onClick={firebasea} className="directory-menu">
                 {
                     categories.map(({id, ...otherSectionProps}) =>(
                         <MenuItem key={id} {...otherSectionProps}/>
