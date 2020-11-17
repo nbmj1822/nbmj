@@ -11,17 +11,11 @@ import {selectCurrentUser} from './redux/user/user.selectors'
 import { createStructuredSelector } from 'reselect'
 import SingInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { selectCollectionsForPreview} from './redux/shop/shop.selectors'
-// import About from './pages/about/about.component'
-// import Privacy from './pages/privacy/privacy.component'
 // import {addCollectionAndDocuments} from './firebase/firebase.utils'
 // import collections from './shop.data'
-// import Refund from './pages/refund/refund.component'
 import CashOnDelivery from './components/cashondelivery/cashondelivery.component'
-// import Term from './pages/term/term.component'
-// import Premium from './pages/premium.component'
-// import Contact from './pages/contactus.component'
-// import Safety from './pages/stayingsafe.component'
-// import Directory from './components/directory/directory.component'
+
+import Directory from './components/directory/directory.component'
 import Admin from './pages/admin/admin.component'
 // import AddProduct from './components/addproduct/addproduct.component';
 // import { HomePageContainer } from './pages/homepage/homepage.styles';
@@ -75,6 +69,7 @@ const App = ({checkUserSession,currentUser})  => {
           <Route exact path='/' component={HomePage}/>
           <Route path='/shop' component={ShopPage}/>
           <Route exact path='/checkout' component={Checkout}/>
+          <Route exact path='/categories' component={Directory}/>
           <Route  exact path='/signin' render={() => currentUser ? (<Redirect to='/'/>) : (<SingInAndSignUpPage/>)} />
           <Route exact path='/admin' render={()=><Admin email={currentUser}/>}/>
           <Route exact path="/payment" render={()=> <CashOnDelivery/>}/>
